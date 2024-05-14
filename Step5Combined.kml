@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Style id="z1">
+  <IconStyle>
+    <Icon>
+      <href>http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png</href>
+    </Icon>
+  </IconStyle>
+</Style>
+<Style id="yellowLine">
+  <LineStyle>
+    <color>ff00ffff</color>
+    <width>4</width>
+  </LineStyle>	
+</Style>
+
+<Placemark><name>Gerontology</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.29041892558192,34.02013502826645</coordinates></Point>
+</Placemark>
+<Placemark><name>Viterbi</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.288936,34.020651</coordinates></Point>
+</Placemark>
+<Placemark><name>GFS</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2881135913076,34.02118740298529</coordinates></Point>
+</Placemark>
+<Placemark><name>Annenberg</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28700845126231,34.02090340000862</coordinates></Point>
+</Placemark>
+<Placemark><name>Bookstore</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28646572186534,34.02082003336179</coordinates></Point>
+</Placemark>
+<Placemark><name>RTC</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28643418699752,34.02014121693685</coordinates></Point>
+</Placemark>
+<Placemark><name>Price</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28346830086919,34.01937242422081</coordinates></Point>
+</Placemark>
+<Placemark><name>Nazarian</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.2834716143121,34.02004556499485</coordinates></Point>
+</Placemark>
+<Placemark><name>McCarthyQuad</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28313712062688,34.0206046847122</coordinates></Point>
+</Placemark>
+<Placemark><name>Fountain</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28347289409271,34.02218573743973</coordinates></Point>
+</Placemark>
+<Placemark><name>Amazon</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28518893073844,34.02554602178926</coordinates></Point>
+</Placemark>
+<Placemark><name>Lyon</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.28783964877957,34.02424504483151</coordinates></Point>
+</Placemark>
+
+<Placemark>
+  <name>Convex Hull</name>
+  <Polygon>
+    <outerBoundaryIs>
+      <LinearRing>
+        <coordinates>-118.28961,34.018681 -118.29041892558192,34.02013502826645 -118.28783964877957,34.02424504483151 -118.28518893073844,34.02554602178926 -118.28347289409271,34.02218573743973 -118.28313712062688,34.0206046847122 -118.28346830086919,34.01937242422081 -118.28961,34.018681</coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+  </Polygon>
+</Placemark>
+
+<Placemark>
+  <name>Line to Neighbor 1</name>
+  <styleUrl>#yellowLine</styleUrl>
+  <LineString>
+    <coordinates>-118.28961,34.018681 -118.29041892558192,34.02013502826645</coordinates>
+  </LineString>
+</Placemark>
+
+<Placemark>
+  <name>Line to Neighbor 2</name>
+  <styleUrl>#yellowLine</styleUrl>
+  <LineString>
+    <coordinates>-118.28961,34.018681 -118.288936,34.020651</coordinates>
+  </LineString>
+</Placemark>
+
+<Placemark>
+  <name>Line to Neighbor 3</name>
+  <styleUrl>#yellowLine</styleUrl>
+  <LineString>
+    <coordinates>-118.28961,34.018681 -118.2881135913076,34.02118740298529</coordinates>
+  </LineString>
+</Placemark>
+
+<Placemark>
+  <name>Line to Neighbor 4</name>
+  <styleUrl>#yellowLine</styleUrl>
+  <LineString>
+    <coordinates>-118.28961,34.018681 -118.28700845126231,34.02090340000862</coordinates>
+  </LineString>
+</Placemark>
+
+</Document>
+</kml>

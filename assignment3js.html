@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OL</title>
+    <script src="https://openlayers.org/api/OpenLayers.js"></script>
+    <style>
+        #map {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <script>
+        console.log("Setting up locations and map.");
+
+        // Storing sample locations
+        var sampleLocations = {
+            "locations": [
+                {"lat": 34.018681, "lon": -118.289610},
+                {"lat": 34.02013502826645, "lon": -118.29041892558192},
+                {"lat": 34.020651, "lon": -118.288936},
+                {"lat": 34.02118740298529, "lon": -118.2881135913076},
+                {"lat": 34.02090340000862, "lon": -118.28700845126231},
+                {"lat": 34.02082003336179, "lon": -118.28646572186534},
+                {"lat": 34.02014121693685, "lon": -118.28643418699752},
+                {"lat": 34.01937242422081, "lon": -118.28346830086919},
+                {"lat": 34.02004556499485, "lon": -118.2834716143121},
+                {"lat": 34.0206046847122, "lon": -118.28313712062688},
+                {"lat": 34.02218573743973, "lon": -118.28347289409271},
+                {"lat": 34.02554602178926, "lon": -118.28518893073844},
+                {"lat": 34.02424504483151, "lon": -118.28783964877957}
+            ]
+        };
+        localStorage.setItem("myData", JSON.stringify(sampleLocations));
+
+        // Fetching stored data
+        var dataStored = JSON.parse(localStorage.getItem("myData"));
+        console.log(dataStored);
+
+        var map, basemap, markers;
+
+        function initMap() {
+            map = new OpenLayers.Map('map');
+            basemap = new OpenLayers.Layer.OSM("Simple OSM Map");
+            map.addLayer(basemap);
+            markers = new OpenLayers.Layer.Markers("Markers");
+            map.addLayer(markers);
+        }
+
+        function addMarker(latitude, longitude) {
+            var lonLat = new OpenLayers.LonLat(longitude, latitude)
+                .transform(
+                    new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                    map.getProjectionObject() // to Spherical Mercator Projection
+                );
+            var point = new OpenLayers.Marker(lonLat);
+            markers.addMarker(point);
+            return lonLat;
+        }
+
+        // Load and setup map layers
+        initMap();
+
+        // Variables to determine the bounds of the map
+        var bounds = new OpenLayers.Bounds();
+
+        // Plotting all sample locations on the map and extend the bounds
+        for (var i in dataStored.locations) {
+            var lonLat = addMarker(dataStored.locations[i].lat, dataStored.locations[i].lon);
+            bounds.extend(lonLat);
+        }
+
+        // Center the map to the bounds of the markers
+        map.zoomToExtent(bounds);
+    </script>
+
+</body>
+
+</html>
